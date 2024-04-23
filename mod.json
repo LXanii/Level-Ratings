@@ -12,5 +12,5 @@
             "version": ">=v1.7.0",
             "importance": "required"
         }
-	],
+	]
 }

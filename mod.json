@@ -4,11 +4,25 @@
 		"win": "2.204",
 		"android": "2.205"
 		},
-	"version": "v1.0.0",
+	"version": "v1.0.1",
 	"id": "xanii.level_ratings",
 	"name": "Level Ratings",
 	"developer": "Xanii",
 	"description": "Adds level ratings to levels",
+	"settings": {
+		"levelcell": {
+			"name": "Show in level cell",
+			"description": "Shows the rating in the level cell (search, featured, etc.)",
+			"type": "bool",
+			"default": true
+		},
+		"levelinfo": {
+			"name": "Show in level info",
+			"description": "Shows the rating in the level info page (the one you see before playing the level)",
+			"type": "bool",
+			"default": true
+		}
+	},
 	"dependencies": [
 	        {
 	            "id": "geode.node-ids",

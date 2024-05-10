@@ -79,8 +79,10 @@ CCLabelBMFont* ratingLabel;
 			}
 		} 
 		
-		mainLayer->addChild(m_fields->ratingSprite);
-		mainLayer->addChild(m_fields->ratingLabel);
+		if (Mod::get()->getSettingValue<bool>("levelcell") == true) {
+			mainLayer->addChild(m_fields->ratingSprite);
+			mainLayer->addChild(m_fields->ratingLabel);
+		}
 	}
 };
 
@@ -129,7 +131,9 @@ std::string textString;
 		CCMenuItemSpriteExtra* ratioButton = CCMenuItemSpriteExtra::create(reinterpret_cast<CCSprite*>(m_fields->ratingLabel), this, menu_selector(ratioDisplay::displayText));
 		ratioMenu->addChild(ratioButton);
 
-		this->addChild(ratioMenu);
+		if (Mod::get()->getSettingValue<bool>("levelinfo") == true) {
+			this->addChild(ratioMenu);
+		}
 
 		return result;
 	}

@@ -125,7 +125,7 @@ class $modify(ratioDisplay, LevelInfoLayer) {
 			setColorAndString({ 255, 123, 0 }, "co", ratingRatio, "have given it a like.", "Buckle up for lots of bugs, or get ready to struggle.");
 		}
 		else {
-			setColorAndString({ 255, 0, 0 }, "cr", ratingRatio, "have disliked it", "<cr>Nobody</c> has enjoyed this level.\nStart running.\nThis is probably a bad level.");
+			setColorAndString({ 255, 0, 0 }, "cr", ratingRatio, "have disliked it.", "<cr>Nobody</c> has enjoyed this level.\nStart running.\nThis is probably a bad level.");
 		}
 
 		ratioMenu->setPosition({downloadsLabel->getPositionX() + 23, downloadsLabel->getPositionY() - 14});

@@ -125,7 +125,11 @@ class $modify(ratioDisplay, LevelInfoLayer) {
 			setColorAndString({ 255, 123, 0 }, "co", ratingRatio, "have given it a like.", "Buckle up for lots of bugs, or get ready to struggle.");
 		}
 		else {
-			setColorAndString({ 255, 0, 0 }, "cr", (ratingRatio * -1), "have disliked it.", "<cr>Nobody</c> has enjoyed this level.\nStart running.\nThis is probably a bad level.");
+			if (ratingRatio != 0.0) ratingRatio *= -1;
+			const char* magicString = "<cr>Nobody</c> has enjoyed this level.\nStart running.\nThis is probably a bad level.";
+			// half the time when a rated level is in the negatives it's actually a good level :( -zmx
+			if (m_level->m_stars.value() != 0) magicString = "It's possible this level was a victim of likebotting, or that the publisher of this level was caught in a recent controversy. In either case, that's not for me to say; I'm not a psychic.";
+			else setColorAndString({ 255, 0, 0 }, "cr", (ratingRatio), "have disliked it.", magicString);
 		}
 
 		ratioMenu->setPosition({downloadsLabel->getPositionX() + 23, downloadsLabel->getPositionY() - 14});

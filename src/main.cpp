@@ -129,7 +129,7 @@ class $modify(ratioDisplay, LevelInfoLayer) {
 			if (ratingRatio != 0.0) ratingRatio *= -1;
 			const char* magicString = "<cr>Nobody</c> has enjoyed this level.\nStart running.\nThis is probably a bad level.";
 			// half the time when a rated level is in the negatives it's actually a good level :( -zmx
-			if (m_level->m_levelID.value() == 104304230 || toLower(std::string(m_level->m_levelName)).find("dislike this level") != std::string::npos) magicString = "This percentage is meaningless; the level's author literally told you to dislike it.";
+			if (m_level->m_levelID.value() == 104304230 || toLower(std::string(m_level->m_levelName)).find("dislike this") != std::string::npos) magicString = "This percentage is meaningless; the level's author literally told you to dislike it.";
 			else if (m_level->m_stars.value() != 0) magicString = "It's possible this level was a victim of dislikebotting, or that the publisher of this level was caught in a recent controversy. In either case, that's not for me to say; I'm not a psychic.";
 			setColorAndString({ 255, 0, 0 }, "cr", (ratingRatio), "have disliked it.", magicString);
 		}

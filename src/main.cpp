@@ -92,7 +92,7 @@ class $modify(ratioDisplay, LevelInfoLayer) {
 	};
 	void setColorAndString(cocos2d::ccColor3B color, const char* colorTag, double ratingRatio, const char* customStringOne, const char* customStringTwo) {
 		m_fields->ratingLabel->setColor(color);
-		m_fields->textString = fmt::format("Out of <cl>{} players</c>, <{}>{}%</c> {}\n\n{}", m_level->m_downloads, colorTag, ratingRatio, customStringOne, customStringTwo).c_str();
+		m_fields->textString = fmt::format("Out of <cl>{} players</c>, <{}>{}%</c> {}\n\n{}", m_level->m_downloads, colorTag, ratingRatio, customStringOne, customStringTwo);
 	}
 	bool init(GJGameLevel* p0, bool p1) {
 		bool result = LevelInfoLayer::init(p0, p1);
